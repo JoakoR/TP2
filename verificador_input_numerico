@@ -1,0 +1,11 @@
+def verificador_input_numerico(mensaje, minimo, maximo):
+	""" Recibe un mensaje (cadena), un numero minimo y un numero maximo (enteros). Muestra el mensaje recibido por parametro por pantalla y espera hasta que el usuario 
+	ingrese un numero entero que este entre los valores minimo y maximo (incluidos). En caso de no ingresar un numero, o que el ingresado este fuera del rango, vuelve a pedirlo.
+	Finalmente devuelve el numero ingresado por el usuario."""
+	numero = ""
+	while not numero.isdigit():
+		numero = input(mensaje)
+		if numero.isdigit():
+			if int(numero) < int(minimo) or int(numero) > int(maximo):
+				numero = ""
+	return int(numero)
